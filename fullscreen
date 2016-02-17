@@ -1,0 +1,4 @@
+osascript <<"EOF"
+	tell application "Terminal" to activate
+	tell application "System Events" to keystroke "f" using { command down, control down }
+EOF
