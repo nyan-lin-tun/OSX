@@ -1,0 +1,17 @@
+#!/bin/bash
+ask_ssid_name(){
+	echo "Enter SSID that you want to find password : "
+	read ssid
+}
+ask_ssid_name
+ifelse(){
+if [[ -z "$ssid" ]]
+	then
+		echo "SSID name can't be blank "
+		ask_ssid_name
+		ifelse
+	else
+		security find-generic-password -wa "$ssid"
+fi
+}
+ifelse
